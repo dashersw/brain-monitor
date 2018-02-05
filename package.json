@@ -1,0 +1,28 @@
+{
+  "name": "brain-monitor",
+  "version": "1.0.0",
+  "description": "A terminal app to monitor brain signals in real-time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashersw/brain-monitor.git"
+  },
+  "keywords": [
+    "EEG",
+    "monitor"
+  ],
+  "author": "Armagan Amcalar <armagan@amcalar.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dashersw/brain-monitor/issues"
+  },
+  "homepage": "https://github.com/dashersw/brain-monitor#readme",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.8.5",
+    "wits": "^1.0.0"
+  }
+}
