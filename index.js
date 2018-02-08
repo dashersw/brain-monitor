@@ -16,9 +16,11 @@ const grid = new contrib.grid({
     hideBorder: true,
     dashboardMargin: 0,
     color: 'black'
-});
+})
 
-const widgets = ['monitor', 'gyro', 'battery', 'log', 'channel-list'].map(w => require(`./widgets/${w}`)(grid))
+const widgets = {};
+
+['monitor', 'gyro', 'battery', 'log', 'channels'].forEach(w => widgets[w] = require(`./widgets/${w}`)(grid))
 
 screen.key(['escape', 'q', 'C-c'], (ch, key) => {
     return process.exit(0)
