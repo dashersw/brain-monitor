@@ -11,17 +11,17 @@ module.exports = function (grid) {
     })
 
 
-    let val = 100
-
-    setInterval(() => {
-        val = --val % 100
+    function update(val) {
         let color = 'red'
 
         if (val > 70) color = 'green'
         else if (val > 30) color = 'yellow'
 
         battery.setData([{ percent: val, label: 'Battery', color }])
-    }, 500)
+    }
 
-    return battery
+    return {
+        battery,
+        update
+    }
 }

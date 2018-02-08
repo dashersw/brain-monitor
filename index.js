@@ -30,6 +30,10 @@ screen.on('resize', function() {
     widgets.forEach(w => w.emit('attach'))
 })
 
+mind.read(data => {
+    widgets.battery.update(data.battery)
+})
+
 screen.render()
 
 setInterval(() => screen.render(), 500)
