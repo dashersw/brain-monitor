@@ -32,6 +32,7 @@ screen.on('resize', function() {
 
 mind.read(data => {
     widgets.battery.update(data.battery)
+    widgets.channels.update(data.cq)
 })
 
 screen.render()
