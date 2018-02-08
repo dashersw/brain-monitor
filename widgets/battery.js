@@ -13,8 +13,8 @@ module.exports = function (grid) {
     function update(val) {
         let color = 'red'
 
-        if (val > 70) color = 'green'
-        else if (val > 30) color = 'yellow'
+        if (val > 49) color = 'green'
+        else if (val > 19) color = 'yellow'
 
         battery.setData([{ percent: val, label: 'Battery', color }])
     }
