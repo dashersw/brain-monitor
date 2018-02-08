@@ -14,8 +14,9 @@ module.exports = function (grid) {
         const data = []
 
         for (let i = 0; i < channels.length; i++) {
-            var row = []
-            row.push(channels[i], val[channels[i]])
+            const row = []
+            const cq = Math.floor(val[channels[i]] / 8192 * 100)
+            row.push(channels[i], `${cq}%`)
 
             data.push(row)
         }
