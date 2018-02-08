@@ -10,7 +10,6 @@ module.exports = function (grid) {
         ]
     })
 
-
     function update(val) {
         let color = 'red'
 
@@ -21,7 +20,7 @@ module.exports = function (grid) {
     }
 
     return {
-        battery,
+        widget: battery,
         update
     }
 }
