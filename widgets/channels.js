@@ -2,7 +2,7 @@ const contrib = require('blessed-contrib')
 const channels = require('../lib/channels')
 
 module.exports = function (grid) {
-    const channels = grid.set(0, 9, 5, 1, contrib.table, {
+    const _channels = grid.set(0, 9, 5, 1, contrib.table, {
         keys: true,
         fg: 'white',
         interactive: false,
@@ -20,7 +20,7 @@ module.exports = function (grid) {
             data.push(row)
         }
 
-        channels.setData({ headers: ['Channel', 'Quality'], data: data })
+        _channels.setData({ headers: ['Channel', 'Quality'], data: data })
     }
 
     return {
