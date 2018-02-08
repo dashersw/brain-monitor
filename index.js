@@ -3,7 +3,7 @@ const contrib = require('blessed-contrib')
 const mind = require('wits')
 const channels = require('./lib/channels')
 
-require('./lib/override-gauge-list')
+require('./lib/override-blessed-contrib')
 
 mind.open()
 
@@ -34,8 +34,9 @@ mind.read(data => {
     widgets.battery.update(data.battery)
     widgets.channels.update(data.cq)
     widgets.gyro.update([data.gyro.x, data.gyro.y])
+    widgets.monitor.update(data.levels)
 })
 
 screen.render()
 
-setInterval(() => screen.render(), 200)
+setInterval(() => screen.render(), 500)
