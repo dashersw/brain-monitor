@@ -38,4 +38,4 @@ mind.read(data => {
 
 screen.render()
 
-setInterval(() => screen.render(), 500)
+setInterval(() => screen.render(), 200)
