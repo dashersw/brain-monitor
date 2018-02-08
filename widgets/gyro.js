@@ -11,15 +11,14 @@ function calcGyro(val, stroke) {
     ]
 }
 
-module.exports = function(grid) {
+module.exports = function (grid) {
     const gyros = grid.set(4, 10, 1, 2, contrib.gaugeList, {
         gaugeSpacing: 0,
         gaugeHeight: 1,
-        gauges:
-            [
-                { label: 'gX', showLabel: false, stack: calcGyro(3, 'cyan') },
-                { label: 'gY', showLabel: false, stack: calcGyro(-2, 'magenta') }
-            ]
+        gauges: [
+            { label: 'gX', showLabel: false, stack: calcGyro(3, 'cyan') },
+            { label: 'gY', showLabel: false, stack: calcGyro(-2, 'magenta') }
+        ]
     })
 
     setInterval(() => {
