@@ -4,7 +4,7 @@
   "description": "A terminal app to monitor brain signals in real-time",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
