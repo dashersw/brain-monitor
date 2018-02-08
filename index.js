@@ -33,6 +33,7 @@ screen.on('resize', function() {
 mind.read(data => {
     widgets.battery.update(data.battery)
     widgets.channels.update(data.cq)
+    widgets.gyro.update([data.gyro.x, data.gyro.y])
 })
 
 screen.render()

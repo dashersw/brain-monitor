@@ -5,9 +5,9 @@ function calcGyro(val, stroke) {
     if (val < -5) val = -5
 
     return [
-        { percent: val >= 0 ? 50 : 50 + val * 10, stroke: 'black' },
-        { percent: Math.abs(val) * 10, stroke },
-        { percent: val <= 0 ? 50 : 50 - val * 10, stroke: 'black' }
+        { percent: val >= 0 ? 50 : 50 + val * 7, stroke: 'black' },
+        { percent: Math.abs(val) * 7, stroke },
+        { percent: val <= 0 ? 50 : 50 - val * 7, stroke: 'black' }
     ]
 }
 
@@ -16,17 +16,20 @@ module.exports = function (grid) {
         gaugeSpacing: 0,
         gaugeHeight: 1,
         gauges: [
-            { label: 'gX', showLabel: false, stack: calcGyro(3, 'cyan') },
-            { label: 'gY', showLabel: false, stack: calcGyro(-2, 'magenta') }
+            { label: 'gX', showLabel: false, stack: calcGyro(0, 'cyan') },
+            { label: 'gY', showLabel: false, stack: calcGyro(0, 'magenta') }
         ]
     })
 
-    setInterval(() => {
+    function update([x, y]) {
         gyros.setGauges([
-            { label: 'gX', showLabel: false, stack: calcGyro(Math.random() * 2, 'cyan') },
-            { label: 'gY', showLabel: false, stack: calcGyro(-Math.random() * 1, 'magenta') }
+            { label: 'gX', showLabel: false, stack: calcGyro(-x, 'cyan') },
+            { label: 'gY', showLabel: false, stack: calcGyro(y, 'magenta') }
         ])
-    }, 500)
+    }
 
-    return gyros
+    return {
+        widget: gyros,
+        update
+    }
 }
