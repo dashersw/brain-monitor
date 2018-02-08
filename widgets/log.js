@@ -6,13 +6,13 @@ module.exports = function(grid) {
         fg: 'green',
         selectedFg: 'green'
     })
-    
-    setInterval(() => {
-        const rnd = Math.round(Math.random() * 2)
-        if (rnd == 0) log.log('starting process ' + channels[Math.round(Math.random() * (channels.length - 1))])
-        else if (rnd == 1) log.log('terminating server ' + channels[Math.round(Math.random() * (channels.length - 1))])
-        else if (rnd == 2) log.log('avg. wait time ' + Math.random().toFixed(2))
-    }, 500)    
 
-    return log
+    function update (val) {
+        log.log(val)
+    }
+
+    return {
+        widget: log,
+        update
+    }
 }
