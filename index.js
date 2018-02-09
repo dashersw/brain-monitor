@@ -24,7 +24,7 @@ screen.key(['escape', 'q', 'C-c'], (ch, key) => {
     return process.exit(0)
 })
 
-screen.on('resize', function() {
+screen.on('resize', function () {
     widgets.forEach(w => w.emit('attach'))
 })
 
