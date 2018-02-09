@@ -5,8 +5,6 @@ const channels = require('./lib/channels')
 
 require('./lib/override-blessed-contrib')
 
-mind.open()
-
 const screen = blessed.screen()
 
 const grid = new contrib.grid({
@@ -30,13 +28,16 @@ screen.on('resize', function() {
     widgets.forEach(w => w.emit('attach'))
 })
 
-mind.read(data => {
-    widgets.battery.update(data.battery)
-    widgets.channels.update(data.cq)
-    widgets.gyro.update([data.gyro.x, data.gyro.y])
-    widgets.monitor.update(data.levels)
-})
-
 screen.render()
 
 setInterval(() => screen.render(), 500)
+
+setTimeout(() => {
+    mind.open()
+    mind.read(data => {
+        widgets.battery.update(data.battery)
+        widgets.channels.update(data.cq)
+        widgets.gyro.update([data.gyro.x, data.gyro.y])
+        widgets.monitor.update(data.levels)
+    })
+}, 100)
