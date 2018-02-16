@@ -32,6 +32,8 @@ screen.render()
 
 setInterval(() => screen.render(), 500)
 
+mind.setLogger(widgets.log.update)
+
 setTimeout(() => {
     mind.open()
     mind.read(data => {
