@@ -7,7 +7,7 @@ module.exports = function (grid) {
         yPadding: 8,
         remainColor: 'black',
         data: [
-            { percent: 10, label: 'Battery', color: 'red' }
+            { percent: 0, label: 'Battery', color: 'red' }
         ]
     })
 
