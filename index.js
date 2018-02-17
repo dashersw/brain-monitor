@@ -30,7 +30,7 @@ screen.on('resize', function () {
 
 screen.render()
 
-setInterval(() => screen.render(), 500)
+setInterval(() => screen.render(), 250)
 
 mind.setLogger(widgets.log.update)
 
