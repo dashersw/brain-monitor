@@ -3,13 +3,26 @@ const contrib = require('blessed-contrib')
 const Fili = require('fili')
 const channels = require('../lib/channels')
 
-function randomColor() {
-    return [Math.random() * 255, Math.random() * 255, Math.random() * 255]
-}
+const rainbow = [
+    [ 255, 0, 0 ],
+    [ 255, 102, 0 ],
+    [ 255, 204, 0 ],
+    [ 204, 255, 0 ],
+    [ 102, 255, 0 ],
+    [ 0, 255, 0 ],
+    [ 0, 255, 102 ],
+    [ 0, 255, 204 ],
+    [ 0, 204, 255 ],
+    [ 0, 102, 255 ],
+    [ 0, 0, 255 ],
+    [ 102, 0, 255 ],
+    [ 204, 0, 255 ],
+    [ 255, 0, 204 ],
+]
 
-const channelLines = channels.map(c => ({
+const channelLines = channels.map((c, i) => ({
     title: c,
-    style: { line: randomColor() },
+    style: { line: rainbow[i] },
     x: Array(600).fill(0),
     y: Array(600).fill(0)
 }))
