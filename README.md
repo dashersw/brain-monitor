@@ -1,4 +1,5 @@
 # brain-monitor — A terminal app to monitor brain signals in real-time
+![brain-monitor](https://user-images.githubusercontent.com/698308/36341093-2f36744e-13e9-11e8-9b64-82a1d3a5d6df.gif)
 
 **brain-monitor is a command line dashboard that displays your raw brain signals in real time.**
 
