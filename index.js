@@ -11,7 +11,7 @@ const grid = new contrib.grid({
     rows: 12,
     cols: 12,
     screen: screen,
-    hideBorder: true,
+    hideBorder: false,
     dashboardMargin: 0,
     color: 'black'
 })
