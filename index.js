@@ -18,7 +18,7 @@ const grid = new contrib.grid({
 
 const widgets = {};
 
-['monitor', 'gyro', 'battery', 'log', 'channels'].forEach(w => widgets[w] = require(`./widgets/${w}`)(grid))
+['monitor', 'gyroxy', 'battery', 'log', 'channels'].forEach(w => widgets[w] = require(`./widgets/${w}`)(grid))
 
 screen.key(['escape', 'q', 'C-c'], (ch, key) => {
     return process.exit(0)
@@ -39,7 +39,7 @@ setTimeout(() => {
     mind.read(data => {
         widgets.battery.update(data.battery)
         widgets.channels.update(data.cq)
-        widgets.gyro.update([data.gyro.x, data.gyro.y])
+        widgets.gyroxy.update([data.gyro.x, data.gyro.y])
         widgets.monitor.update(data.levels)
     })
 }, 100)

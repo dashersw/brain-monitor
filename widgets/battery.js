@@ -1,9 +1,10 @@
 const contrib = require('blessed-contrib')
 
 module.exports = function (grid) {
-    const battery = grid.set(0, 10, 4, 2, contrib.donut, {
-        radius: 16,
+    const battery = grid.set(0, 10, 3, 1, contrib.donut, {
+        radius: 14,
         arcWidth: 4,
+        yPadding: 8,
         remainColor: 'black',
         data: [
             { percent: 10, label: 'Battery', color: 'red' }
