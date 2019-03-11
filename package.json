@@ -1,6 +1,6 @@
 {
   "name": "brain-monitor",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A terminal app to monitor brain signals in real-time",
   "main": "index.js",
   "bin": "bin/brain-monitor.js",
