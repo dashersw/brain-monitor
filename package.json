@@ -23,8 +23,8 @@
   "homepage": "https://github.com/dashersw/brain-monitor#readme",
   "dependencies": {
     "blessed": "^0.1.81",
-    "blessed-contrib": "^4.8.5",
+    "blessed-contrib": "^4.8.11",
     "fili": "^2.0.1",
-    "wits": "^1.1.1"
+    "wits": "^2.0.1"
   }
 }
